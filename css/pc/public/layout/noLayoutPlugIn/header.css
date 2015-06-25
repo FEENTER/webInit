@@ -1,0 +1,21 @@
+/* 파일 형식이 UTF-8인지 꼭 확인 */
+@charset 'utf-8'; 
+.bodyHeaderC {
+	/* IE 9 이상만 지원
+	visibility: hidden;
+	*/	
+	height: 60px
+}
+
+.bodyHeaderC > .paneHeaderC {
+	display: none
+}
+
+.listSytleTypeNoneC {
+	list-style-type: none;
+	padding: 0
+}
+
+.inlineC {
+	display: inline
+}

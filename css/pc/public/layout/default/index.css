@@ -1,0 +1,63 @@
+/* 파일 형식이 UTF-8인지 꼭 확인 */
+@charset 'utf-8'; 
+html, body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	overflow:auto; /* when page gets too small */
+}
+
+/* jquery layout */
+.containerDivC {
+	height:100%;
+	margin:0 auto;
+	width:100%;
+	/* max-width:900px; */
+	min-width:700px;
+	/* _width:700px; */ /* min-width for IE6 */
+}
+
+.ui-layout-pane { /* jqueryLayout 용이기 때문에 클래스명 변경 불가 */
+	background:white;
+	border:0px, solid red; /* 경계선 사라지게 변경 함 */
+	padding:0;
+	overflow:auto;
+}
+
+#paneSouthDiv {
+	text-align:center;
+	height:138px;
+}
+
+#paneNorthDiv {
+	height:100px;
+}
+/* //jquery layout */
+
+/* Body Full Page Loading */
+/* 전체 화면 로딩용(IE 9 이상 지원하기 때문에 부분 로딩으로 변경) */
+/*
+.loadingDivC {
+    display:   none;
+    position:  fixed;
+    z-index:   1000;
+    top:       0;
+    left:      0;
+    height:    100%;
+    width:     100%;
+    background:rgba( 255, 255, 255, .8 ) 
+                url('../../../../../img/pc/public/layout/default/loading.gif')
+                50% 50% 
+                no-repeat;
+}
+
+.loadingBodyC {
+    overflow:hidden;   
+}
+
+.loadingBodyC .loadingDivC {
+    display:block;
+}
+*/
+/* //Body Full Page Loading */

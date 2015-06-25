@@ -1,0 +1,57 @@
+/* 파일 형식이 UTF-8인지 꼭 확인 */
+@charset 'utf-8'; 
+div.LayoutWestC
+{				
+	width:20%;
+	background-color:red
+}
+div.LayoutCenterC
+{								
+	width:69%;
+	background-color:green
+}
+div.LayoutEastC
+{	
+	width:10%;
+	background-color:blue
+}
+
+/* 인라인으로 조정 */
+div.containerDivC > div
+{
+	vertical-align:top;
+	display:inline-block
+}
+
+/* 높이 조정 꼭 px로 해야함 %로 하면 효과 없음 */
+/* nth-of-type(n)은 IE9 이상 이여야 함 */
+/*
+div.containerDivC:nth-of-type(1) > div
+{
+	height:400px;
+}
+div.containerDivC:nth-of-type(2) > div
+{
+	height:200px;
+	background-color:orange
+}
+*/	
+div.containerFirstDivC
+{
+	height:500px;
+	background-color:black
+}
+div.containerSecondDivC
+{
+	display:none;
+	height:200px;
+	background-color:orange
+}
+/*first-child는 IE8 이상이면 되나 last-child는 IE9 이상 이여야 함*/
+/*
+div.containerDivC:last-child
+{
+	height:200px;
+	background-color:orange
+}
+*/

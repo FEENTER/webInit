@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<!-- 파일 형식이 UTF-8인지 꼭 확인 -->
+		<!-- 주석 끝 부분에 initFile이 있으면 파일마다 항상 다르게 설정해야 함 -->
+		<!-- 주석 끝 부분에 debugCode  있으면 실 서버 반영시 주석 처리 -->
+		<!-- 주석 끝 부분에 !debugCode 있으면 실 서버 반영시 주석 해제 -->		
+
+		<meta charset="utf-8">		
+		<!-- 기본 IE7 렌더링 모드로 함 -->		
+		<meta http-equiv="X-UA-Compatible" content="IE=7,chrome=1">
+		<title>호텔조인 FB</title>
+		<meta name="description" content="">
+		<meta name="author" content="HoJae">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no target-densitydpi=medium-dpi" />
+		
+		<!-- 공통 -->
+		<link rel="shortcut icon" href="../../../../favicon.ico" />
+		<link rel="apple-touch-icon" href="../../../../apple-touch-icon.png" />
+		<link rel="stylesheet" href="../../../../css/pc/public/ext/jqueryUi/uiRedMond/jqueryUi.css" />	
+		<link rel="stylesheet" href="../../../../css/pc/public/ext/jqueryGrid/jqueryGrid.css" />
+		<link rel="stylesheet" href="../../../../css/pc/public/ext/jqueryContextMenu/jqueryContextMenu.css" />			
+		
+        <script src="../../../../js/pc/public/ext/jquery/jquery-1.11.1.js" charset="utf-8"></script>
+        <script src="../../../../js/pc/public/ext/jqueryMigrate/jqueryMigrate.js" charset="utf-8"></script>
+        <script src="../../../../js/pc/public/ext/xDomainRequest/xDomainRequest.js" charset="utf-8"></script> <!-- IE9 이하 AJAX Cross Domain 패치 파일 -->
+		<!-- 1.10 이상의 JQuery Layout plug-in과 호환이 안됨(Layout는 v1.9.0 이 기본) -->
+		<script src="../../../../js/pc/public/ext/jqueryHistory/jqueryHistory.js" charset="utf-8"></script>
+		<script src="../../../../js/pc/public/ext/jqueryUi/jqueryUiMin.js" charset="utf-8"></script>	
+		<script src="../../../../js/pc/public/ext/jqueryLazyLoad/jqueryLazyLoad.js" charset="utf-8"></script>		
+		<!-- Cookie 삭제 : $.removeCookie('_trs_id', {path:'/'}); -->
+		<script src="../../../../js/pc/public/ext/jqueryCookie/jqueryCookie.js" charset="utf-8"></script>
+		<script src="../../../../js/pc/public/ext/jqueryContextMenu/jqueryContextMenu.js" charset="utf-8"></script>
+		<!-- 동적으로 언어 변경은 jqGrid 호출시 JS 호출로 가능 -->
+		<!--script src="../../../../js/pc/public/ext/jqueryGrid/lang/grid.locale-kr.js"></script-->
+		<script src="../../../../js/pc/public/ext/jqueryGrid/jqueryGrid.js" charset="utf-8"></script>
+		<script src="../../../../js/pc/public/ext/json3/json3.js" charset="utf-8"></script>		
+		<!-- 동적으로 언어 변경은 jqueryValidate 호출시 JS 호출로 가능 -->
+		<script src="../../../../js/pc/public/ext/jqueryValidate/jqueryValidate.js" charset="utf-8"></script>		
+		<script src="../../../../js/pc/public/ext/jqueryValidate/additionalMethods.js" charset="utf-8"></script>
+		<script src="../../../../js/pc/public/ext/jqueryPlaceHolder/jqueryPlaceHolder.js" charset="utf-8"></script> <!-- jqueryValidate와 같이 사용시 버그 때문에 제외 -->
+		<script src="../../../../js/pc/public/ext/stackTrace/stackTrace.js" charset="utf-8"></script> <!-- Dynamic Call JavaScript Debuging 용 -->
+		<!-- 비동기 FileUpload -->		
+		<script src="../../../../js/pc/public/ext/jqueryForm/jqueryForm.js" charset="utf-8"></script>				
+		<script src="../../../../js/common/globalObject.js" charset="utf-8"></script>
+		<script src="../../../../js/common/message.js" charset="utf-8"></script>
+		<script src="../../../../js/common/addOnUtil.js" charset="utf-8"></script>		
+		<script src="../../../../js/common/addOnUiPc.js" charset="utf-8"></script>
+		<script src="../../../../js/common/ajaxUtil.js" charset="utf-8"></script>			
+		<!-- //공통 -->		
+			
+		<script src="../../../../js/pc/private/test/initUiP/9568.js" charset="utf-8"></script>	
+		<script src="../../../../js/pc/private/test/initUiD/9568.js" charset="utf-8"></script>	
+		<script src="../../../../js/pc/private/test/ajax/9568.js" charset="utf-8"></script>	
+		<script src="../../../../js/pc/private/test/uiEvent/9568.js" charset="utf-8"></script>	
+	</head>
+	<body>		
+			<div id="9568PageMainDiv" class="9568PageMainC">
+			  	<div id="speed_div"></div>
+			    Group By: <select id="chngroup">
+			        <option value="name">Name</option>
+			        <option value="invdate">Invoice Date</option>
+			        <option value="clear">Remove Grouping</option>	
+			    </select>
+			    <br />
+			    <br />
+			    <table id="navgrid"></table>
+			    <div id="pagernav"></div>
+			    <!-- 로우 추가 하면서 색 변환 처리 자바 스크립트 -->
+			    <!-- Jquery 1.8을 지원하기 위해 버전 4.4.1에서 JqGrid가 이름이 jgrid로 변경 됨으로서 에러 남 -->
+			    <!--script src="afterinsrow.js" type="text/javascript"> </script>
+			    <script src="loaderror.js" type="text/javascript"> </script-->
+			    <button id="btn_export">Export Excel</button>
+			    <button id="customSearchButton">Custom Search</button>
+			</div>
+	</body>	
+</html>

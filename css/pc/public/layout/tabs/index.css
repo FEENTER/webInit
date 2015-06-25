@@ -1,0 +1,5 @@
+/* 파일 형식이 UTF-8인지 꼭 확인 */
+@charset 'utf-8';
+
+#tabsDiv { margin-top: 1em; }
+#tabsDiv li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }

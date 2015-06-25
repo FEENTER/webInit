@@ -1,0 +1,58 @@
+<script>
+// 프로토타입 테스트
+
+window.A = function() {
+	var _tmp = 'hello';
+	this.x = function() {	
+		console.log(_tmp + ' in this(공유)');
+	};
+	
+	A.prototype.x = function() {
+		console.log(_tmp + ' in prototype(상속)');
+	};
+	
+	this.thisSetTmp = function(_getStr) {
+		_tmp = _getStr;
+	};
+	
+	A.prototype.protoSetTmp = function(_getStr) {
+		this._tmp = _getStr;
+	};
+};
+
+A.prototype.y = function() {
+	console.log('외부에서 prototype 설정 in prototype(상속)');
+	console.dir(this);
+};
+
+var B = new A();
+var C = new A();
+
+// A.x(); // undefine error 발생
+A.prototype.x(); // hello in prototype(상속)
+B.x(); 
+C.x(); 
+
+B.y(); 
+C.y(); 
+B.thisSetTmp('worldB_1');
+C.thisSetTmp('worldC_1');
+B.x(); 
+C.x(); 
+// C.prototype.protoSetTmp('world2'); // undefine error 발생
+
+B.protoSetTmp('worldB_2');
+C.protoSetTmp('worldC_2');
+
+B.x(); 
+C.x(); 
+
+A.prototype.protoSetTmp('worldA_3');
+B.x(); 
+C.x(); 
+
+console.dir(A.prototype._tmp);
+console.log(B._tmp);
+console.log(C._tmp);
+// //프로토타입 테스트
+</script>

@@ -1,0 +1,42 @@
+/* 파일 형식이 UTF-8인지 꼭 확인 */
+@charset 'utf-8'; 
+.bodyDivC > div {
+	float:left
+}
+
+.westMenuDivC {
+	width:20%;
+}
+
+.westMenuDivC ul { 
+	margin:20px; 
+	margin-top:0; 
+	padding:0
+}
+
+.westMenuDivC li { 
+	padding:5px; 	
+	font-weight:bold;
+	color:black;
+	list-style:none
+}
+
+.centerContentC {
+	width:60%
+}
+
+.eastMenuDivC {
+	width:20%
+}
+
+.eastMenuDivC ul { 
+	margin:20px; 
+	margin-top:0;
+	padding:0
+}
+
+.eastMenuDivC li { 
+	padding:5px; 
+	color:black; 
+	list-style:none
+}

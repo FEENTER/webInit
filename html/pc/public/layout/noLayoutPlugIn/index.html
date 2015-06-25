@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- 파일 형식이 UTF-8인지 꼭 확인 -->
+        <!-- 주석 끝 부분에 initFile이 있으면 파일마다 항상 다르게 설정해야 함 -->
+        <!-- 주석 끝 부분에 debugCode  있으면 실 서버 반영시 주석 처리 -->
+        <!-- 주석 끝 부분에 !debugCode 있으면 실 서버 반영시 주석 해제 -->     
+
+        <meta charset="utf-8">      
+        <!-- 기본 IE7 렌더링 모드로 함 -->       
+        <meta http-equiv="X-UA-Compatible" content="IE=7,chrome=1">
+        <title>webInit</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="HoJae">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+        
+        <!-- 공통 -->     
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryUi/uiRedMond/jqueryUi.css" />
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryGrid/jqueryGrid.css" />
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryContextMenu/jqueryContextMenu.css" />
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryDateTimePicker/jqueryDateTimePicker.css" />
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryToasty/jqueryToasty.css" />
+        <link rel="stylesheet" href="http://192.168.0.147/webInit/css/pc/public/ext/jqueryLayoutGridSter/jqueryLayoutGridSter.css" />
+
+        <!-- Dynamic Call JavaScript Debuging 용 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/stackTrace/stackTrace.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jquery/jquery-1.11.1.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryMigrate/jqueryMigrate.js" charset="utf-8"></script>
+        <!-- IE9 이하 AJAX Cross Domain 패치 파일 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/xDomainRequest/xDomainRequest.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryHistory/jqueryHistory.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryUi/jqueryUiMin.js" charset="utf-8"></script>   
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryLazyLoad/jqueryLazyLoad.js" charset="utf-8"></script>      
+        <!-- Cookie 삭제 : $.removeCookie('_trs_id', {path:'/'}); -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryCookie/jqueryCookie.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryContextMenu/jqueryContextMenu.js" charset="utf-8"></script>
+        <!-- 동적으로 언어 변경은 jqGrid 호출시 JS 호출로 가능 -->
+        <!--script src="https://192.168.0.147/webInit/js/pc/public/ext/jqueryGrid/lang/grid.locale-kr.js"></script-->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryGrid/jqueryGrid.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/json3/json3.js" charset="utf-8"></script>        
+        <!-- 동적으로 언어 변경은 jqueryValidate 호출시 JS 호출로 가능 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryValidate/jqueryValidate.js" charset="utf-8"></script>      
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryValidate/additionalMethods.js" charset="utf-8"></script>
+        <!-- jqueryValidate와 같이 사용시 버그 때문에 제외 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryPlaceHolder/jqueryPlaceHolder.js" charset="utf-8"></script>
+        <!-- 비동기 FileUpload <= http://yard.tistory.com/739 참고하여 교체 필요 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryForm/jqueryForm.js" charset="utf-8"></script>
+        <!-- jqueryDatePicker 확장 Plugin -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryDateTimePicker/jqueryDateTimePicker.js" charset="utf-8"></script>
+        <!-- jquery Layout을 위한 GridSter -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryLayoutGridSter/jqueryLayoutGridSter.js" charset="utf-8"></script>
+        <!-- javascript Date 응용 lib -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/moment/momentWithLocales.js" charset="utf-8"></script>
+        <!-- 동적 팝업 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryToasty/jqueryToasty.js" charset="utf-8"></script>
+        <!-- jquery Event First를 이용하여 이벤트를 첫번째 이벤트로 만들 수 있음 -->
+        <script src="http://192.168.0.147/webInit/js/pc/public/ext/jqueryFirstEvent/jqueryFirstEvent.js" charset="utf-8"></script>
+        
+        <script src="http://192.168.0.147/webInit/js/common/globalObject.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/common/message.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/common/addOnUtil.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/common/addOnUiPc.js" charset="utf-8"></script>
+        <script src="http://192.168.0.147/webInit/js/common/ajaxUtil.js" charset="utf-8"></script>
+        <!-- //공통 -->
+        
+        <!-- 해당 파일 용 initFile -->
+        <!-- Body 밑으로 내려가면 Html5 표준 위반 -->
+        <!-- base href 서버에 맞게 변경 필요(Full Url 비 사용시 IE에서 2번 불러오는 버그 생김): 현재 사용 안함 -->        
+        <!-- <base href="http://127.0.0.1/webInit/html/pc/public/layout/noLayoutPlugIn/index.html" /> -->
+        <link rel="shortcut icon" href="../../../../../favicon.ico" />
+        <link rel="apple-touch-icon" href="../../../../../apple-touch-icon.png" />
+        <link rel="stylesheet" href="../../../../../css/pc/public/layout/noLayoutPlugIn/index.css" />
+        <link rel="stylesheet" href="../../../../../css/pc/public/layout/noLayoutPlugIn/header.css" />
+        <link rel="stylesheet" href="../../../../../css/pc/public/layout/noLayoutPlugIn/footer.css" />
+        
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/ajax/index.js" charset="utf-8"></script>         
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiP/index.js" charset="utf-8"></script>  
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiD/index.js" charset="utf-8"></script>  
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/uiEvent/index.js" charset="utf-8"></script>  
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/ajax/header.js" charset="utf-8"></script>    
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiP/header.js" charset="utf-8"></script> 
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiD/header.js" charset="utf-8"></script>
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/uiEvent/header.js" charset="utf-8"></script>
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/ajax/footer.js" charset="utf-8"></script>        
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiP/footer.js" charset="utf-8"></script> 
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/initUiD/footer.js" charset="utf-8"></script>
+        <script src="../../../../../js/pc/public/layout/noLayoutPlugIn/uiEvent/footer.js" charset="utf-8"></script> 
+        <!-- //해당 파일 용 initFile -->
+        <!-- Dynamic Css 전체, Js IE9 초과($.getScript 사용으로 Js는 나타나지 않음) -->
+    </head>
+    <body>
+        <div id="bodyHeaderDiv" class="bodyHeaderC" >
+            <div id="paneHeaderDiv" class="paneHeaderC" >&nbsp;</div>           
+        </div>      
+        <div id="bodyMainDiv" class="bodyMainDivC">         
+            <div id="paneCenterDiv" class="paneCenterC">&nbsp;</div>
+        </div>
+        <div id="bodyFooterDiv" class="bodyFooterC" >
+            <div id="paneFooterDiv" class="paneFooterC">&nbsp;</div>
+        </div>
+        <!-- 전체 화면 로딩용(IE 9 이상 지원하기 때문에 부분 로딩으로 변경) -->
+        <!-- <div class="loadingDivC">&nbsp;</div> -->
+        <!-- //전체 화면 로딩용(IE 9 이상 지원하기 때문에 부분 로딩으로 변경) -->
+        <!-- Dynamic Js IE9 이하($.getScript 사용으로 Js는 나타나지 않음) -->
+        
+        <!-- 로딩모달팝업 -->
+        <!-- .hide 클래스를 넣고빼고에 따라 로딩창이 뜨고 안뜹니다. -->
+        <div id="modalLoadingLayerDiv" class="hide">
+            <div class="loadingMask"></div>
+            <div class="modalLoadingContent">
+              <span>Loading...</span>
+            </div>
+        </div>
+        <!-- // 로딩모달팝업 -->
+    </body> 
+</html>
