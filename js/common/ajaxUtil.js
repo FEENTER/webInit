@@ -695,7 +695,8 @@ $(document).ready(function() {
                 }
                 
                 _jsonDataResult['reponseData'] = _reqJsonObject;
-                _jsonDataResult['requestOption'] = _defaultObject;
+                _jsonDataResult['requestOption'] = this;
+                _jsonDataResult['requestOption']['requestData'] = gm.addOnUtil.objQueryStringToJSON(this.data);
                 
                 if (typeof(_defaultObject.successCallBackSub) === 'function') {
                     _defaultObject.successCallBackSub(_jsonDataResult);

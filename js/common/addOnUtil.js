@@ -739,6 +739,18 @@ $(document).ready(function() {
     };
     // URL 파라메터를 갖고 다니면서 페이지 이동(히스토리에 남지 않음)
     
+    gm.addOnUtil.objQueryStringToJSON = function(strQueryString) {
+      var objPairs = strQueryString.split('&');
+      
+      var result = {};
+      objPairs.forEach(function(strPair) {
+          var objPair = strPair.split('=');
+          result[objPair[0]] = decodeURIComponent(objPair[1] || '');
+      });
+
+      return JSON.parse(JSON.stringify(result));
+    };
+    
     // 자주 쓰는 함수는 Jquery 확장으로 처리
     $.extend({debug:gm.addOnUtil.debug}); // gm.addOnUtil.debug를 $.debug로 선언하기
     $.extend({errorMsg:gm.addOnUtil.error}); // gm.addOnUtil.error를 $.errorMsg로 선언하기($.error은 기본으로 있음)
