@@ -579,7 +579,7 @@ $(document).ready(function() {
 			return [true,'']; 
 	    }
 	    function processAdd(response, postdata) {
-			alert("processAdd(Reponse After) : " + response.status); 			
+			alert("processAdd(Response After) : " + response.status); 			
 			/*
 			var success = true;
 	    	var message = ""

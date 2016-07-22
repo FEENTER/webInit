@@ -428,7 +428,7 @@ $(document).ready(function() {
                    $.debug(jsFileNameStr, printStackTrace(), 'gm.ajaxUtil.getHttpOnlyGet', _reqDataArray);                  
                    try {                       
                         // Could not resolve host(서버부하 또는 host를 못 찾을 경우) 에러 : 자동으로 다시 호출 처리
-                        if(_reqDataArray == undefined ) { alert('Reponse Result is undefined (_reqDataArray) - Please Change : _langStr'); return false;}
+                        if(_reqDataArray == undefined ) { alert('Response Result is undefined (_reqDataArray) - Please Change : _langStr'); return false;}
                         if(_reqDataArray.getHttp.errorNo === 6) {                     
                             if(gm.globalObject.getDebugStr()) {
                                 alert('Could not resolve host(서버부하 또는 host를 못 찾을 경우) 에러 : 자동으로 다시 호출 처리');
@@ -444,7 +444,7 @@ $(document).ready(function() {
                             }    
                         }                                                
                         
-                        if(_reqDataArray.getHttp.html === undefined) { alert('Reponse Result is undefined (_reqDataArray.getHttp) - Please Change : _langStr'); return false;}
+                        if(_reqDataArray.getHttp.html === undefined) { alert('Response Result is undefined (_reqDataArray.getHttp) - Please Change : _langStr'); return false;}
                         
                         if (typeof(_successCallBackSub) === 'function') {
                             _successCallBackSub(_reqDataArray);
@@ -694,7 +694,7 @@ $(document).ready(function() {
                     }
                 }
                 
-                _jsonDataResult['reponseData'] = _reqJsonObject;
+                _jsonDataResult['responseData'] = _reqJsonObject;
                 _jsonDataResult['requestOption'] = this;
                 _jsonDataResult['requestOption']['requestData'] = gm.addOnUtil.objQueryStringToJSON(this.data);
                 
